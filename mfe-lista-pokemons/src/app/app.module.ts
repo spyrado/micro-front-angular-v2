@@ -10,7 +10,6 @@ import { PokemonTypePipe } from './shared/pipes/pokemon-type.pipe';
   declarations: [MfeListaPokemonsComponent, PokemonTypePipe],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
-  // bootstrap: [AppComponent]
 })
 export class AppModule implements DoBootstrap {
   constructor(private injector: Injector) {}
@@ -25,11 +24,10 @@ export class AppModule implements DoBootstrap {
 /**
  * to run this micro front local, follow these steps
  * 1º run "npm run build:watch:prod" OR "npm run build:watch:dev" if you need to debug.
- * 2º go to folder "dist/mfe-lista-pokemons" and run the command static-server ( you need to install globaly if you dont have, to install globaly "npm i -g static-server" )
- * 3º open in google chrome the link: http://localhost:9080/
+ * 2º go to folder "dist/mfe-lista-pokemons" and run the command http-server --path dist/mfe-lista-pokemons ( you need to install globaly if you dont have, to install globaly "npm install --global http-server" )
+ * 3º on the terminal click in any http like: http://seu_ip:8080
  * 4º That's it ma frend ;)
  *
- * http-server --path dist/mfe-lista-pokemons
+ * 
  */
 // ng build --configuration=production --output-hashing=none --single-bundle=true
-// go into dist/mfe-lista-pokemons and run static-server
