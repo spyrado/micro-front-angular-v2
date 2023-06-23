@@ -1,0 +1,29 @@
+<table class="table table-striped align-middle">
+  <thead>
+    <tr>
+      <th scope="col">Foto</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Peso</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let pokemon of (pokemons$ | async)">
+        <tr>
+          <th scope="row"><img [src]="pokemon?.sprites?.front_default"></th>
+          <td>{{ pokemon.name }}</td>
+          <td>{{ pokemon.weight}}</td>
+          <td>{{ pokemon | pokemonType }}</td>
+          <td>
+            <button 
+              class="btn btn-primary w-100"
+              (click)="onAdicionarAoTopo(pokemon)"
+            >
+              Adicionar ao topo
+            </button>
+          </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
